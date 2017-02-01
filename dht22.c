@@ -12,7 +12,7 @@
 
 // CONSTANTS 
 #define MAX_TIMINGS	85
-#define DEBUG 1
+#define DEBUG 0
 #define WAIT_TIME 2000
 
 // GLOBAL VARIABLES
@@ -22,7 +22,7 @@ char mode = 'c';      // valid modes are c, f, h
 int data[5] = { 0, 0, 0, 0, 0 };
 float temp_cels = -1;
 float temp_fahr = -1;
-float humiditiy = -1;
+float humidity  = -1;
 
 // FUNCTION DECLARATIONS
 int init();
@@ -33,7 +33,8 @@ int read_dht_data();
 int read_dht_data() {
 	uint8_t laststate = HIGH;
 	uint8_t counter	= 0;
-	uint8_t = 0, i;
+	uint8_t j = 0;
+	uint8_t i;
 
 	data[0] = data[1] = data[2] = data[3] = data[4] = 0;
 
@@ -89,7 +90,7 @@ int read_dht_data() {
 		temp_cels = c;
 		temp_fahr = c * 1.8f + 32;
 		humidity = h;
-		if (DEBUG) printf( "read_dht_data() Humidity = %.1f %% Temperature = %.1f *C (%.1f *F)\n", h, c, f );
+		if (DEBUG) printf( "read_dht_data() Humidity = %.1f %% Temperature = %.1f *C (%.1f *F)\n", humidity, temp_cels, temp_fahr );
 		return 0; // OK
 	} else {
 		if (DEBUG) printf( "read_dht_data() Data not good, skip\n" );
@@ -116,7 +117,6 @@ int init() {
 }
 
 int main(int argc, char *argv[]) {
-	if (DEBUG) printf( "DHT22 temperature sensor \n" );
 	int done = 0;
 
 	if (argc!=3) {
@@ -132,6 +132,9 @@ int main(int argc, char *argv[]) {
 			return 1;
 		}
 	}
+	if (DEBUG) fprintf(stdout, "Reading DHT22 ... mode=%c sensorPIN=%i\n", mode, dht_pin);
+
+	init();
 
 	while (!done) {
 		done = !read_dht_data();
