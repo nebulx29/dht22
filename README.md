@@ -23,7 +23,7 @@ $ sudo apt-get install git-core
 
 ## Prerequisites
 
-In order to compile the utility you need GCC, Make and the <a href="http://wiringpi.com/">wiringPi</> libraries. If you haven't already done so, you can install it via
+In order to compile the utility you need GCC, Make and the <a href="http://wiringpi.com/">wiringPi</a> libraries. If you haven't already done so, you can install it via
 <pre>
 $ sudo apt-get update
 $ sudo apt-get upgrade
