@@ -27,8 +27,7 @@ In order to compile the utility you need GCC, Make and the <a href="http://wirin
 <pre>
 $ sudo apt-get update
 $ sudo apt-get upgrade
-$ sudo apt-get install build-essential
-$ sudo apt-get install wiringpi
+$ sudo apt-get install build-essential wiringpi
 </pre>
 <i>Remark:</i> As i haven't testet it from a fresh build yet, please let me know in case i forgot something
 
