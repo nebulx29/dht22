@@ -31,3 +31,14 @@ $ sudo apt-get install build-essential wiringpi
 </pre>
 <i>Remark:</i> As i haven't testet it from a fresh build yet, please let me know in case i forgot something
 
+The Makefile installs the binary per default to `/home/pi/bin/dht22`. If your prefer otherwise change the path in the file `dht22\Makefile`.
+
+If you don't have a `home/pi/bin/` directory yet, create it with the command `mkdir /home/pi/bin`. 
+
+## Compile and install
+
+<pre>
+$ mkdir /home/pi/bin
+$ cd dht22
+$ make install
+</pre>
