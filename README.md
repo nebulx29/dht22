@@ -37,7 +37,7 @@ $ make install
 ## Connecting the Sensor and GPIO numbering
 
 Connect the DHT22 sensor to VCC, GND and DATA to a free GPIO PIN. 
-The dht22 utiltity uses the <b>wiringPi</b> GPIO numbering scheme.
+The dht22 utiltity uses the <b>wiringPi GPIO numbering scheme</b>.
 In the subsequent examples GPIO 22 (wiringPi) ist used. On Raspberry Pi 3 this GPIO 22 (wiringPi) equals physical Pin #31 as well as GPIO 6 in BCM numbering.
 
 <pre>
